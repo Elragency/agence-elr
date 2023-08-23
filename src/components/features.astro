@@ -5,62 +5,62 @@ import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Bring Your Own Framework",
+    title: "Un service rapide et accessible",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      "Nous pouvons mettre votre entreprise en ligne en quelques jours en nous assurant d’avoir un site web personnalisé pour votre entreprise.",
     icon: "mdi:handshake",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Optimisé pour le web (SEO)",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any of your favorite npm packages.",
-    icon: "mdi:graph",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
+      "Avoir un site internet est uniquement utile s’il s’affiche lorsque quelqu’un vous cherche. En optimisant votre SEO, cela n’est pas une possibilité, mais une certitude.",
     icon: "mdi:search-web",
   },
   {
-    title: "Community",
+    title: "Devenez une référence",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "En utilisant l’intelligence artificielle, nous sommes en mesure de vous placer en tant qu’experts dans votre domaine aux yeux de vos clients potentiels.",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Intégrations additionnelles",
+    description:
+      "Vous avez besoin d'une plateforme pour permettre à vos clients de prendre rendez-vous ? Vous avez besoin d'outils spécifiques ? Nous pouvons nous en charger.",
+    icon: "mdi:graph",
+  },
+  {
+    title: "Des Services Complémentaires",
+    description:
+      "Un site web n'est que le début, en choisissant nos services, nous vous offrons des outils complémentaires tels qu’un courriel d’entreprise ou des automatisations efficaces.",
+    icon: "mdi:directions-fork",
+  },
+
+  {
+    title: "Marketing 360 Complet",
+    description:
+      "En faisant affaire avec nous, vous allez pouvoir comprendre qui sont vos clients et où ils sont afin d’avoir la possibilité de faire des campagnes publicitaires ciblées complètes et sans vous devoir vous briser la tête.",
     icon: "mdi:account-group",
   },
 ];
 ---
+<section style="padding-top: 50px;">
+  <ContentSection title="Ce Que Nous Offrons" id="features" class="float-in-on-scroll">
+    <Fragment slot="lead">
+      Notre but est de créer un partenariat <span class="text-primary">adapté à vos besoins</span> sans vous obliger à payer des sommes exorbitantes. 
+    </Fragment>
+    <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map(({ title, description, icon }) => (
+          <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+            <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+              <Icon name={icon} />
+            </div>
+            <p class="text-center font-extrabold text-xl">{title}</p>
+            <p class="text-center text-offset text-sm">{description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </ContentSection>
+</section>
 
-<ContentSection title="Features" id="features">
-  <Fragment slot="lead">
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-     tools and adds its own <span class="text-primary">innovations</span>.
-  </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {
-      features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} />
-          </div>
-          <p class="text-center font-extrabold text-xl">{title}</p>
-          <p class="text-center text-offset text-sm">{description}</p>
-        </li>
-      ))
-    }
-  </ul>
-</ContentSection>
